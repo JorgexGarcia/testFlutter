@@ -29,6 +29,14 @@ class AvatarPage extends StatelessWidget {
           )
         ],
       ),
+      body: const Center(
+        child: FadeInImage(
+          image: NetworkImage('https://www.trecebits.com/wp-content/uploads/2018/08/logo_one_icon.0-1-1.jpg'),
+          fadeInDuration: Duration(seconds: 2),
+          fadeInCurve: Curves.fastLinearToSlowEaseIn,
+          placeholder: AssetImage('assets/loading.gif'),
+        ),
+      ),
     );
   }
 }

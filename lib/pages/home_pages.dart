@@ -16,6 +16,11 @@ class HomePage extends StatelessWidget {
         'title' : 'Avatares',
         'icon': const Icon(Icons.account_circle_outlined),
         'ruta': 'avatar'
+      },
+      {
+        'title' : 'Cards',
+        'icon': const Icon(Icons.ac_unit),
+        'ruta': 'cards'
       }
     ];
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter03/pages/alert_pages.dart';
 import 'package:flutter03/pages/avatar_pages.dart';
+import 'package:flutter03/pages/cards.dart';
 import 'package:flutter03/pages/home_pages.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
           '/': (BuildContext) => HomePage(),
           'alert': (BuildContext) => AlertPage(),
           'avatar': (BuildContext) => AvatarPage(),
+          'cards': (BuildContext) => CardsPage(),
       },
     );
   }
