@@ -21,6 +21,11 @@ class HomePage extends StatelessWidget {
         'title' : 'Cards',
         'icon': const Icon(Icons.ac_unit),
         'ruta': 'cards'
+      },
+      {
+        'title' : 'Inputs',
+        'icon': const Icon(Icons.access_alarm_outlined),
+        'ruta': 'inputs'
       }
     ];
 
