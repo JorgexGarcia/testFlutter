@@ -4,6 +4,7 @@ import 'package:flutter03/pages/avatar_pages.dart';
 import 'package:flutter03/pages/cards_pages.dart';
 import 'package:flutter03/pages/home_pages.dart';
 import 'package:flutter03/pages/inputs_pages.dart';
+import 'package:flutter03/pages/personajes_pages.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           'avatar': (BuildContext) => AvatarPage(),
           'cards': (BuildContext) => CardsPage(),
           'inputs': (BuildContext) => InputsPage(),
+          'personajes': (BuildContext) => PersonajesPage(),
       },
     );
   }

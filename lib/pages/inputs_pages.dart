@@ -12,7 +12,13 @@ class _InputsPageState extends State<InputsPage> {
   
   String nombre = '';
   bool temp = true;
-  TextEditingController _inputDateController = TextEditingController();
+  final TextEditingController _inputDateController = TextEditingController();
+
+  List<String> _cosas = ['cosa1', 'cosa2', 'cosa3', 'cosa4'];
+  String _optionSelected = 'cosa1';
+  String animal = 'gato';
+
+  bool isChecked = true;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +37,13 @@ class _InputsPageState extends State<InputsPage> {
           const SizedBox(height: 20),
           _passwordInput(),
           const SizedBox(height: 20),
-          _datePickerInput()
+          _datePickerInput(),
+          const SizedBox(height: 20),
+          _optionListInput(),
+          const SizedBox(height: 20),
+          _checkBoxInput(),
+          const SizedBox(height: 20),
+          _radioButtonsInput()
         ],
       ),
     );
@@ -135,5 +147,71 @@ class _InputsPageState extends State<InputsPage> {
         }catch (_){}
       });
     }
+  }
+
+  Widget _optionListInput() {
+    return DropdownButton(
+      value: _optionSelected,
+      items: getOptions(),
+      onChanged: (value) {
+        setState(() {
+          _optionSelected = value.toString();
+        });
+      }
+    );
+  }
+
+  List<DropdownMenuItem<String>> getOptions() {
+    List<DropdownMenuItem<String>> temp = [];
+    _cosas.forEach((element) {
+      temp.add(
+          DropdownMenuItem(child: Text(element), value: element));
+    });
+      return temp;
+  }
+
+  Widget _checkBoxInput() {
+    return ListTile(
+      title: Text('Acepto los terminos'),
+      trailing: Checkbox(
+        value: isChecked,
+        onChanged: (bool? value){
+          setState(() {
+            isChecked = value!;
+          });
+        },
+      ),
+    );
+  }
+
+  Widget _radioButtonsInput() {
+    return Column(
+      children: [
+        ListTile(
+          title: Text('gato'),
+          leading: Radio<String>(
+            value: 'gato',
+            groupValue: animal,
+            onChanged: (String? value){
+              setState(() {
+                animal = value!;
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: Text('conejo'),
+          leading: Radio<String>(
+            value: 'conejo',
+            groupValue: animal,
+            onChanged: (String? value){
+              setState(() {
+                animal = value!;
+              });
+            },
+          ),
+        )
+      ],
+    );
   }
 }
