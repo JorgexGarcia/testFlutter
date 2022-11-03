@@ -43,6 +43,10 @@ class _ListaCompraPageState extends State<ListaCompraPage> {
           }
         }
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {  },
+        child: const Icon(Icons.add)
+      ),
     );
   }
 }
