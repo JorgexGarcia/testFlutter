@@ -31,6 +31,23 @@ class HomePage extends StatelessWidget {
         'title' : 'Personajes',
         'icon': const Icon(Icons.face),
         'ruta': 'personajes'
+      },
+      {
+        'title' : 'Personaje',
+        'icon': const Icon(Icons.face_unlock_sharp),
+        'ruta': 'personaje'
+      }
+      ,
+      {
+        'title' : 'PageInfo',
+        'icon': const Icon(Icons.assistant_navigation),
+        'ruta': 'pasarInfo'
+      }
+      ,
+      {
+        'title' : 'Lista Compra',
+        'icon': const Icon(Icons.shopping_basket_rounded),
+        'ruta': 'listaCompra'
       }
     ];
 

@@ -4,6 +4,9 @@ import 'package:flutter03/pages/avatar_pages.dart';
 import 'package:flutter03/pages/cards_pages.dart';
 import 'package:flutter03/pages/home_pages.dart';
 import 'package:flutter03/pages/inputs_pages.dart';
+import 'package:flutter03/pages/lista_compra_page.dart';
+import 'package:flutter03/pages/pasar_info_page.dart';
+import 'package:flutter03/pages/personaje_page.dart';
 import 'package:flutter03/pages/personajes_pages.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -39,6 +42,9 @@ class MyApp extends StatelessWidget {
           'cards': (BuildContext) => CardsPage(),
           'inputs': (BuildContext) => InputsPage(),
           'personajes': (BuildContext) => PersonajesPage(),
+          'personaje': (BuildContext) => PersonajePage(),
+          'pasarInfo': (BuildContext) => Page1(),
+          'listaCompra': (BuildContext) => ListaCompraPage(),
       },
     );
   }

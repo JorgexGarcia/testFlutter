@@ -14,7 +14,9 @@ class HttpService{
     Response res = await get(Uri.parse(url + '/1'));
 
     if(res.statusCode == 200){
-      return Personajes.fromJson(res.body);
+      var a =  Personajes.fromJson(res.body);
+      print(a.toString());
+      return a;
     }else{
       throw Exception('Fallo');
     }
