@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter03/pages/add_articulo_page.dart';
 import 'package:flutter03/pages/alert_pages.dart';
 import 'package:flutter03/pages/avatar_pages.dart';
 import 'package:flutter03/pages/cards_pages.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
           'personajes': (BuildContext) => PersonajesPage(),
           'personaje': (BuildContext) => PersonajePage(),
           'pasarInfo': (BuildContext) => Page1(),
-          'listaCompra': (BuildContext) => ListaCompraPage(),
+          'listaCompra': (BuildContext) => ListaCompraPage()
       },
     );
   }

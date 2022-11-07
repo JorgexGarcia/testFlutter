@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter03/pages/add_articulo_page.dart';
 
 import '../models/Articulo.dart';
 
@@ -12,12 +13,17 @@ class ListaCompraPage extends StatefulWidget {
 class _ListaCompraPageState extends State<ListaCompraPage> {
 
   List<Articulo> lista = [];
+  double totalLista = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Lista de la compra'),
+        actions: [
+          Text('Total: ${totalLista.toString()}'),
+          const SizedBox(width: 10)
+        ],
       ),
       body: ListView.builder(
         itemCount: lista.length,
@@ -34,6 +40,7 @@ class _ListaCompraPageState extends State<ListaCompraPage> {
               trailing: GestureDetector(
                 onLongPress: (){
                   setState(() {
+                    totalLista -= lista[index].total;
                     lista.removeAt(index);
                   });
                 },
@@ -44,7 +51,16 @@ class _ListaCompraPageState extends State<ListaCompraPage> {
         }
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {  },
+        onPressed: () async {
+          final Articulo? articulo = await Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const AddArticulosPage()));
+          if(articulo != null) {
+            setState(() {
+              lista.add(articulo);
+              totalLista += articulo.total;
+            });
+          }
+        },
         child: const Icon(Icons.add)
       ),
     );
